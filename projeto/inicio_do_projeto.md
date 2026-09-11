@@ -1,4 +1,4 @@
-1. Introdução 
+# 1. Introdução 
 
 O Grupo Comolatti atua em diversos segmentos econômicos, como os setores imobiliário e alimentício, com destaque para a distribuição de peças automotivas, área na qual se consolidou como uma das principais referências do mercado brasileiro. A empresa conta com aproximadamente 120 filiais distribuídas em todos os estados do Brasil e no Distrito Federal, além de mais de 5 mil colaboradores, o que garante ampla capilaridade e forte presença nacional. 
 
@@ -20,7 +20,7 @@ Para sustentar sua operação nacional, o Grupo Comolatti possui uma estrutura r
 
 No âmbito comercial, a empresa utiliza o WebSales como CRM, centralizando atividades como gestão de clientes, aplicação de descontos, políticas comerciais e acompanhamento de pedidos. Para prospecção e expansão da base de clientes, adota o Salesforce, voltado à gestão de leads e funil de vendas. Na camada analítica, utiliza o Qlik Sense como ferramenta de Business Intelligence, possibilitando a criação de dashboards gerenciais, monitoramento de indicadores de desempenho e análises estratégicas por região, produto e filial. 
 
-2. Descrição das Bases de Dados Utilizadas 
+# 2. Descrição das Bases de Dados Utilizadas 
 
 Foram utilizadas quatro bases de dados principais para a análise, todas em formato CSV, facilitando a integração e análise dos dados. As bases utilizadas foram: 
 
