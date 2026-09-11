@@ -1,4 +1,4 @@
-# 1. Introdução 
+# Introdução 
 
 O Grupo Comolatti atua em diversos segmentos econômicos, como os setores imobiliário e alimentício, com destaque para a distribuição de peças automotivas, área na qual se consolidou como uma das principais referências do mercado brasileiro. A empresa conta com aproximadamente 120 filiais distribuídas em todos os estados do Brasil e no Distrito Federal, além de mais de 5 mil colaboradores, o que garante ampla capilaridade e forte presença nacional. 
 
