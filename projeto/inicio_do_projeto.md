@@ -22,4 +22,7 @@ No âmbito comercial, a empresa utiliza o WebSales como CRM, centralizando ativi
 
  Dados de Frotas (2025): Provenientes do Ministério dos Transportes, por meio do Sistema Nacional de Trânsito (SENATRAN) — ao acessar o link será direcionado para a página do órgão. A informação da base analisada é: Frota Nacional de Veículos por Município, disponibilizada no arquivo Frota por Município e Tipo — dezembro/2025 
 
+<img width="1126" height="692" alt="image" src="https://github.com/user-attachments/assets/f1d40911-22c7-4d19-aa2c-4e64b22ebc3e" />
+
+
 <https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/frota-de-veiculos-2025> 
