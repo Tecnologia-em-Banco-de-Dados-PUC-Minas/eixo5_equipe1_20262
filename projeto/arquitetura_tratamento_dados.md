@@ -4,7 +4,7 @@ A arquitetura do projeto representa, de forma visual, o fluxo completo de tratam
 
 No escopo atual, os dados utilizados são estáticos, o que torna a orquestração (parte da automação do pipeline) dispensável. Caso a empresa opte por integrar dados dinâmicos, a infraestrutura Azure já está preparada para receber a camada de orquestração via Azure Data Factory, sem necessidade de reestruturação.
 
-***ARQUITETURA DO PROCESSO JUNTO DAS FERRAMENTAS ULTILIZADAS E ARGUMENTAÇÃO DO PQ ULTILIZARAM ELAS****
+!!!!!!***ARQUITETURA DO PROCESSO JUNTO DAS FERRAMENTAS ULTILIZADAS E ARGUMENTAÇÃO DO PQ ULTILIZARAM ELAS****!!!!!!!!
 
 
 
@@ -22,7 +22,7 @@ No escopo atual, os dados utilizados são estáticos, o que torna a orquestraç�
 
 
 
-****COLOCAR AQUI IMAGENS DOS PRINTS DAS TRANSFORMAÇÕES*****
+!!!!!****COLOCAR AQUI IMAGENS DOS PRINTS DAS TRANSFORMAÇÕES*****!!!!!
 
 Vale destacar que os dados utilizados já haviam sido tratados no semestre anterior, em ambiente AWS, e foram migrados para o Microsoft Fabric para dar continuidade ao trabalho. Nesta etapa, a equipe analisou as transformações aplicadas no Dataflow e verificou o conjunto de dados migrado.
 
