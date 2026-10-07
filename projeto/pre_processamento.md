@@ -1,29 +1,35 @@
-Arquitetura e tratamento dos dados
+# Arquitetura e tratamento dos dados
 
 A arquitetura do projeto representa, de forma visual, o fluxo completo de tratamento e análise dos dados, estruturado para suportar o processamento de dados estáticos e uma futura automação do pipeline.
 
 No escopo atual, os dados são estáticos, o que dispensa a orquestração (parte da automação do pipeline). Caso a empresa opte por integrar dados dinâmicos, a infraestrutura Azure já está preparada para receber a camada de orquestração via Azure Data Factory, sem necessidade de reestruturação.
 
 <img width="560" height="348" alt="Diagrama da arquitetura do projeto" src="https://github.com/user-attachments/assets/aae46c64-d635-40d0-9dbd-26719bd9a1ca" />
-1. Armazenamento e processamento
 
-Foi utilizado o Microsoft Fabric, plataforma que reúne em um só ambiente o armazenamento (de dados brutos e processados), a transformação e o consumo dos dados. Isso evita a movimentação entre ferramentas diferentes e facilita o controle do fluxo.
+---
 
-Data Lakehouse: armazena os dados brutos, na origem, sem exigir esquema prévio, preservando a fonte original para consulta ou reprocessamento sempre que necessário.
-Data Warehouse: armazena os dados tratados, organizados em tabelas relacionais com colunas e tipos bem definidos, prontos para consulta em SQL e para as etapas de análise e treinamento do modelo.
-2. Transformação
+## 1. Armazenamento e processamento
 
-A transformação foi feita no Dataflow, baseado em Power Query. Sua interface visual registra cada passo em ordem, o que torna a limpeza rastreável e fácil de revisar. O Dataflow busca os arquivos-base no Data Lakehouse, trata os dados e os direciona ao Data Warehouse, para uso em dashboards e em projetos de machine learning.
+Foi utilizado o **Microsoft Fabric**, plataforma que reúne em um só ambiente o armazenamento (de dados brutos e processados), a transformação e o consumo dos dados. Isso evita a movimentação entre ferramentas diferentes e facilita o controle do fluxo.
 
-O projeto reúne 7 consultas, cada uma conectada a um arquivo CSV:
+- **Data Lakehouse:** armazena os dados brutos, na origem, sem exigir esquema prévio, preservando a fonte original para consulta ou reprocessamento sempre que necessário.
+- **Data Warehouse:** armazena os dados tratados, organizados em tabelas relacionais com colunas e tipos bem definidos, prontos para consulta em SQL e para as etapas de análise e treinamento do modelo.
 
-Frota de veículos por município e tipo (dezembro de 2025);
-População de Minas Gerais em 2025;
-Tabela base, usada como base de integração;
-Composição das regiões geográficas por município (IBGE, 2017);
-Vendas anuais de etanol hidratado por município;
-Vendas anuais de gasolina C por município;
-Vendas anuais de óleo diesel por município.
+---
+
+## 2. Transformação
+
+A transformação foi feita no **Dataflow**, baseado em **Power Query**. Sua interface visual registra cada passo em ordem, o que torna a limpeza rastreável e fácil de revisar. O Dataflow busca os arquivos-base no Data Lakehouse, trata os dados e os direciona ao Data Warehouse, para uso em dashboards e em projetos de machine learning.
+
+O projeto reúne **7 consultas**, cada uma conectada a um arquivo CSV:
+
+1. Frota de veículos por município e tipo (dezembro de 2025);
+2. População de Minas Gerais em 2025;
+3. Tabela `base`, usada como base de integração;
+4. Composição das regiões geográficas por município (IBGE, 2017);
+5. Vendas anuais de etanol hidratado por município;
+6. Vendas anuais de gasolina C por município;
+7. Vendas anuais de óleo diesel por município.
 
  <img width="1793" height="802" alt="image" src="https://github.com/user-attachments/assets/3527f37e-494b-4944-89a1-2009f0495fa0" />
  
