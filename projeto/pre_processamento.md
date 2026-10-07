@@ -29,34 +29,39 @@ Vendas anuais de óleo diesel por município.
  
 <img width="1791" height="807" alt="image" src="https://github.com/user-attachments/assets/004c6859-c83f-4377-960c-da0780616fb1" />
 
-Cada consulta registra suas transformações como etapas aplicadas, o que torna o processo documentado, reproduzível e auditável.
+### 2.1 Extração e padronização inicial
 
-2.1 Extração e padronização inicial
 Em todas as consultas foram executadas as mesmas etapas básicas:
 
-Origem e Navegação: conexão com a fonte e acesso ao arquivo CSV;
-CSV Importado: leitura do arquivo e conversão em tabela estruturada;
-Cabeçalhos promovidos: a primeira linha passou a ser o nome das colunas;
-Tipo de coluna alterado: definição do tipo de dado de cada coluna, garantindo consistência para cálculos e relacionamentos.
+- **Origem e Navegação:** conexão com a fonte e acesso ao arquivo CSV;
+- **CSV Importado:** leitura do arquivo e conversão em tabela estruturada;
+- **Cabeçalhos promovidos:** a primeira linha passou a ser o nome das colunas;
+- **Tipo de coluna alterado:** definição do tipo de dado de cada coluna, garantindo consistência para cálculos e relacionamentos.
 
-2.2 Padronização do código do município
-O código de município do IBGE possui 7 dígitos: os dois primeiros identificam a UF e os cinco seguintes, o município dentro do estado. Em todas as tabelas, o campo foi tratado da mesma forma:
+### 2.2 Padronização do código do município
 
-Extração dos 2 primeiros caracteres: isolou o código da UF;
-Extração dos 5 últimos caracteres: gerou uma nova coluna apenas com o código do município;
-Renomeação e reordenação das colunas: os campos receberam nomes padronizados e posição consistente entre as consultas.
+O código de município do IBGE possui **7 dígitos**: os dois primeiros identificam a **UF** e os cinco seguintes, o município dentro do estado. Em todas as tabelas, o campo foi tratado da mesma forma:
 
-Com isso, o código do município ficou uniforme em todas as fontes, formando a chave de relacionamento entre as tabelas.
+- **Extração dos 2 primeiros caracteres:** isolou o código da UF;
+- **Extração dos 5 últimos caracteres:** gerou uma nova coluna apenas com o código do município;
+- **Renomeação e reordenação das colunas:** os campos receberam nomes padronizados e posição consistente entre as consultas.
 
-2.3 Ajustes específicos
-Tabela de população: aplicou-se a substituição de valores, corrigindo inconsistências para que a coluna fosse reconhecida como numérica.
-Tabela base: a coluna de valor exigiu correção do separador decimal. No padrão brasileiro, a vírgula separa as casas decimais (1234,56), mas em arquivos CSV ela também funciona como delimitador de campos, o que poderia dividir os valores em colunas distintas ou lê-los como texto. A vírgula foi substituída por ponto (1234.56), padrão reconhecido pelo Power Query, e a coluna passou a ser lida como número decimal.
+Com isso, o código do município ficou **uniforme em todas as fontes**, formando a chave de relacionamento entre as tabelas.
 
-2.4 Finalidade do tratamento
-Limpeza: correção de inconsistências, como a substituição na tabela de população e o ajuste do separador decimal na base;
-Padronização: nomes, tipos e ordem das colunas uniformes, com a chave do município no mesmo formato em todas as tabelas;
-Adequação de formatos: compatibilização de idioma e localidade entre o CSV e o Power Query, evitando erros de leitura numérica;
-Preparação para integração: com a chave comum e os tipos corretos, é possível relacionar frota, população, regiões geográficas e vendas de combustíveis em um único modelo analítico.
+### 2.3 Ajustes específicos
 
-3. Machine learning
-Para o desenvolvimento do modelo de machine learning, será utilizado o ambiente de machine learning do próprio Fabric e o Google Colab, com a linguagem Python.
+- **Tabela de população:** aplicou-se a **substituição de valores**, corrigindo inconsistências para que a coluna fosse reconhecida como numérica.
+- **Tabela `base`:** a coluna de **valor** exigiu correção do separador decimal. No padrão brasileiro, a vírgula separa as casas decimais (`1234,56`), mas em arquivos CSV ela também funciona como delimitador de campos, o que poderia dividir os valores em colunas distintas ou lê-los como texto. A **vírgula foi substituída por ponto** (`1234.56`), padrão reconhecido pelo Power Query, e a coluna passou a ser lida como **número decimal**.
+
+### 2.4 Finalidade do tratamento
+
+- **Limpeza:** correção de inconsistências, como a substituição na tabela de população e o ajuste do separador decimal na `base`;
+- **Padronização:** nomes, tipos e ordem das colunas uniformes, com a chave do município no mesmo formato em todas as tabelas;
+- **Adequação de formatos:** compatibilização de idioma e localidade entre o CSV e o Power Query, evitando erros de leitura numérica;
+- **Preparação para integração:** com a chave comum e os tipos corretos, é possível relacionar frota, população, regiões geográficas e vendas de combustíveis em um único modelo analítico.
+
+---
+
+## 3. Machine learning
+
+Para o desenvolvimento do modelo de machine learning, será utilizado o ambiente de machine learning do próprio Fabric e o Google Colab, com a linguagem **Python**.
