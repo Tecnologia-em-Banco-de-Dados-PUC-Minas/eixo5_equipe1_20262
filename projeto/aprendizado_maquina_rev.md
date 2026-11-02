@@ -93,13 +93,13 @@ O fluxo analítico segue uma sequência encadeada, onde o resultado de cada etap
 
 ---
 
-### 4. Projeção Temporal de Longo Prazo (2026–2030)
-* **Objetivo:** Projetar o comportamento macroeconômico estadual para o horizonte de 2026 a 2030.
+### 4. Projeção Temporal de Longo Prazo (2027–2031)
+* **Objetivo:** Projetar o comportamento macroeconômico estadual para o horizonte de 2027 a 2031.
 * **Metodologia:**
   * Agregação macro da frota, população e consumo de combustíveis.
   * Ajuste de curvas via `PolynomialFeatures(degree=2)` acoplado a `LinearRegression`.
 * **Controle de Variância:** O Grau 2 foi selecionado especificamente para capturar tendências de aceleração sem induzir oscilações ou crescimento exponencial espúrio (risco clássico de sobreajuste em graus $\ge 3$).
-* **Artefato de Saída:** `Projecao_Crescimento_MG_2026_2030.xlsx`
+* **Artefato de Saída:** `Projecao_Crescimento_MG_2027_2031.xlsx`
 
 ---
 
