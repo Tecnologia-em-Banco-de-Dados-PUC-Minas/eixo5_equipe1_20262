@@ -111,7 +111,7 @@ O pipeline conta com um módulo de diagnóstico unificado para validação da es
 | :--- | :--- | :--- | :--- |
 | **Demanda (Regressão Linear)** | $R^2$ Treino / Teste <br> $MAPE$ Teste | **0.990 / 0.989** <br> **35.49%** | **Ajuste Adequado:** Generalização estável, sem sinais de memorização ou predições negativas. |
 | **Econometria Espacial** | Índice de Moran (Leve / Pesado) <br> $R^2$ Espacial Puro | **0.135 / 0.138** <br> **~0.059** | **Spillover Moderado:** Autocorrelação espacial positiva comprovando que a demanda dos vizinhos afeta diretamente a demanda local. |
-| **Projeção Macro (2026–2030)** | Crescimento Frota Total <br> Crescimento Óleo Diesel | **+13.15%** <br> **+30.45%** | **Curva Sustentável:** Projeção alinhada com as dinâmicas de renovação de frota e transporte rodoviário. |
+| **Sustentabilidade da Projeção (2027-2031)** | **Crescimento Acumulado (2031 vs Histórico):** Frota 24.36% \| Diesel 58.55%<br>**Crescimento YoY (Ano-a-Ano no fim de 2031):** Frota 2.96% \| Diesel 7.13%<br>**Crescimento apenas na Janela de Projeção (2027-2031):** Frota 12.84% \| Diesel 31.11% |
 
 ---
 
