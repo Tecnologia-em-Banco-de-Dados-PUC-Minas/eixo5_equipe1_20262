@@ -14,7 +14,7 @@ Para viabilizar o treinamento e a calibração analítica, foi estruturada a **B
 1. **Demografia Oficial (IBGE / SIDRA):**
    * Extração direta dos dados censitários de 2010 e 2022 via API SIDRA.
    * Cálculo da Taxa de Crescimento Anual Composta ($CAGR$) intercensitária de 12 anos:
-   * 
+   
 <img width="396" height="115" alt="image" src="https://github.com/user-attachments/assets/e02fa63a-4053-4e42-beed-ea099bb7243d" />
 
    * Projeção exponencial dos anos intermédios (2016–2025), eliminando distorções de estimativas lineares e descontinuidades censitárias.
@@ -34,7 +34,7 @@ Para viabilizar o treinamento e a calibração analítica, foi estruturada a **B
 
 O fluxo analítico segue uma sequência encadeada, onde o resultado de cada etapa atua como pré-requisito para o modelo subsequente:
 
-```
+```text
 [Base Master Analítica (2016-2025)]
                │
                ▼
@@ -44,92 +44,4 @@ O fluxo analítico segue uma sequência encadeada, onde o resultado de cada etap
                │
                ├───► [3. Econometria Espacial: Spillover Dinâmico (KNN=5)]
                │
-               └───► [4. Projeção Temporal Macro: Grau 2 (2026-2030)]
-```
-
----
-
-### 1. Segmentação Hierárquica de Mercado (K-Means)
-* **Objetivo:** Agrupar municípios por escala estrutural similar antes da regressão preditiva, evitando que metrópoles (ex.: Belo Horizonte) e micromunicípios rurais distorçam a reta de ajuste global.
-* **Metodologia:**
-  * Variáveis base: médias históricas municipais de população, frota total, consumo de ciclo leve e consumo de diesel.
-  * Padronização via `StandardScaler`.
-  * Clusterização com `KMeans(n_clusters=6, random_state=42, n_init=10)`.
-* **Rotulagem Hierárquica Automática:** Classificação baseada no indicador de *força bruta*:
-  $$\text{Força Bruta} = \overline{\text{Frota Total}} + \overline{\text{Consumo Leve}} + \overline{\text{Consumo Diesel}}$$
-  * Nível 1: *Polo Logístico e Metropolitano*
-  * Nível 2: *Centro Regional Principal*
-  * Nível 3: *Polo Econômico Intermediário*
-  * Nível 4: *Município em Desenvolvimento*
-  * Nível 5: *Pequenos Municípios de Apoio*
-  * Nível 6: *Micromunicípios / Rurais*
-* **Artefato de Saída:** `Base_Consolidada_Clusters_MG.xlsx`
-
----
-
-### 2. Modelo Preditivo de Demanda (Regressão Linear)
-* **Objetivo:** Estimar o volume de vendas a partir do perfil populacional, frota estimada e categoria veicular.
-* **Metodologia:**
-  * `Pipeline` estruturado com `ColumnTransformer`.
-  * Normalização z-score (`StandardScaler`) nas variáveis quantitativas e codificação categórica (`OneHotEncoder(drop='first')`) para o tipo de veículo.
-  * Separação balanceada entre treino (80%) e teste (20%).
-* **Papel da Clusterização Prévia:** Redução significativa do erro percentual ($MAPE$) ao permitir que a regressão capture o comportamento do mercado condicionado à escala estrutural do município.
-
----
-
-### 3. Econometria Espacial: Efeito *Spillover* Dinâmico
-* **Objetivo:** Quantificar o transbordo geográfico que cidades-polo exercem na demanda dos municípios circunvizinhos.
-* **Metodologia:**
-  * Extração das coordenadas geográficas (latitude e longitude) de cada município.
-  * Construção da Matriz de Pesos Espaciais de 5 vizinhos mais próximos (`libpysal.weights.KNN(k=5)`) com padronização por linhas (`transform='r'`).
-  * Cálculo da Defasagem Espacial (*Spatial Lag*):
-    $$\text{Lag}_i = \sum_{j} w_{ij} y_j$$
-* **Taxas Dinâmicas de Absorção ($\rho$):**
-  A intensidade de absorção é calculada pela razão entre o mercado vizinho e o mercado local:
-  $$\text{Razão de Mercado} = \frac{\text{Lag Espacial}}{\text{Consumo Local} + 1}$$
-  * *Ciclo Leve:* $\rho \in [0.05, 0.30]$ (5% a 30%)
-  * *Ciclo Pesado:* $\rho \in [0.08, 0.40]$ (8% a 40%, refletindo a dispersão de eixos rodoviários e frotas de carga)
-* **Artefato de Saída:** `Base_Academica_Spillover_Segmentada.xlsx`
-
----
-
-### 4. Projeção Temporal de Longo Prazo (2027–2031)
-* **Objetivo:** Projetar o comportamento macroeconômico estadual para o horizonte de 2027 a 2031.
-* **Metodologia:**
-  * Agregação macro da frota, população e consumo de combustíveis.
-  * Ajuste de curvas via `PolynomialFeatures(degree=2)` acoplado a `LinearRegression`.
-* **Controle de Variância:** O Grau 2 foi selecionado especificamente para capturar tendências de aceleração sem induzir oscilações ou crescimento exponencial espúrio (risco clássico de sobreajuste em graus $\ge 3$).
-* **Artefato de Saída:** `Projecao_Crescimento_MG_2027_2031.xlsx`
-
----
-
-## 📊 Diagnóstico e Validação dos Modelos
-
-O pipeline conta com um módulo de diagnóstico unificado para validação da estabilidade estatística:
-
-| Frente Analítica | Métrica Avaliada | Valor Obtido | Diagnóstico |
-| :--- | :--- | :--- | :--- |
-| **Demanda (Regressão Linear)** | $R^2$ Treino / Teste <br> $MAPE$ Teste | **0.990 / 0.989** <br> **35.49%** | **Ajuste Adequado:** Generalização estável, sem sinais de memorização ou predições negativas. |
-| **Econometria Espacial** | Índice de Moran (Leve / Pesado) <br> $R^2$ Espacial Puro | **0.135 / 0.138** <br> **~0.059** | **Spillover Moderado:** Autocorrelação espacial positiva comprovando que a demanda dos vizinhos afeta diretamente a demanda local. |
-| **Sustentabilidade da Projeção (2027-2031)** | **Crescimento Acumulado (2031 vs Histórico):** Frota 24.36% \| Diesel 58.55%<br>**Crescimento YoY (Ano-a-Ano no fim de 2031):** Frota 2.96% \| Diesel 7.13%<br>**Crescimento apenas na Janela de Projeção (2027-2031):** Frota 12.84% \| Diesel 31.11% |
-
----
-
-## 📁 Estrutura de Artefatos Gerados
-
-```text
-├── Base_Master_Analitica_MG_2016_2025.xlsx     # Base histórica unificada (demografia, frota e consumo)
-├── Base_Consolidada_Clusters_MG.xlsx          # Rótulos hierárquicos do K-Means por município
-├── Base_Academica_Spillover_Segmentada.xlsx   # Matriz espacial, lags e volumes com spillover
-└── Projecao_Crescimento_MG_2026_2030.xlsx     # Série projetada de mercado para o próximo quinquênio
-```
-
----
-
-## 💻 Dependências do Ambiente
-
-Para reproduzir o pipeline, instale as dependências:
-
-```bash
-pip install matplotlib numpy pandas scikit-learn openpyxl libpysal spreg requests
-```
+               └───► [4. Projeção Temporal Macro: Grau 2 (2027-2031)]
