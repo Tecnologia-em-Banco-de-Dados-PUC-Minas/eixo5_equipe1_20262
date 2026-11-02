@@ -14,7 +14,9 @@ Para viabilizar o treinamento e a calibração analítica, foi estruturada a **B
 1. **Demografia Oficial (IBGE / SIDRA):**
    * Extração direta dos dados censitários de 2010 e 2022 via API SIDRA.
    * Cálculo da Taxa de Crescimento Anual Composta ($CAGR$) intercensitária de 12 anos:
-     $$CAGR = \left(\frac{\text{Pop}_{2022}}{\text{Pop}_{2010}}\right)^{\frac{1}{12}} - 1$$
+   * 
+<img width="396" height="115" alt="image" src="https://github.com/user-attachments/assets/e02fa63a-4053-4e42-beed-ea099bb7243d" />
+
    * Projeção exponencial dos anos intermédios (2016–2025), eliminando distorções de estimativas lineares e descontinuidades censitárias.
 
 2. **Histórico da Frota Veicular (SENATRAN 2016–2025):**
