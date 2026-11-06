@@ -48,6 +48,6 @@ A avaliação dos modelos é centralizada em um script de diagnóstico automatiz
 ├── Base_Academica_Spillover_Segmentada.xlsx   # Matriz espacial, lags e volumes com spillover
 ├── Projecao_Crescimento_MG_2027_2031.xlsx     # Série projetada de mercado para o próximo quinquênio
 └── projecao_tendencias_2027_2031.png          # Visualização gráfica das curvas tendenciais
-
-# Acesso ao Google Colab
+```
+## Acesso ao Google Colab
 Link: https://colab.research.google.com/drive/1fXQjnYzouhHfILDqUnpDv9yK_oXwUzEC?usp=sharing
