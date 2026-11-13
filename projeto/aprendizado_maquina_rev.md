@@ -1144,5 +1144,11 @@ Após executar todos os scripts obtivemos os seguntes resultados:
 O desemppenho foi muito bom em todos os tres modelos com resultados consistentes utilizando diferentes bases de dados. Além desse resumo da execução cada um dos codigo gerou um relatório .xlsx ou imagens .png de acordo com a demanda.
 Esse conteudo pode ser acessado pelos atalhos abaixo:
 
+* 📊 **[Base Master Analítica (2016–2025)](./Base_Master_Analitica_MG_2016_2025.xlsx)** — Série histórica consolidada dos 853 municípios de Minas Gerais (demografia IBGE, frota SENATRAN e consumo ANP)[cite: 2, 3].
+* 🎯 **[Base Consolidada de Clusters](./Base_Consolidada_Clusters_MG.xlsx)** — Classificação hierárquica municipal resultante do K-Means ($K=6$), segmentando de *Polos Logísticos* a *Micromunicípios Rurais*[cite: 2, 3].
+* 🌐 **[Base Acadêmica de Spillover Segmentada](./Base_Academica_Spillover_Segmentada%20(1).xlsx)** — Matriz de vizinhança ($KNN=5$), defasagem espacial (*Spatial Lag*), taxas dinâmicas de absorção ($\rho$) e demanda final ajustada[cite: 2, 3].
+* 🔮 **[Projeção de Crescimento (2027–2031)](./Projecao_Crescimento_MG_2027_2031.xlsx)** — Estimativas macroeconômicas anuais de população, frota total e consumo de combustíveis (ciclos leve e pesado).
 
+### 📉 Visualização das Curvas Preditivas (2027–2031)
 
+![Trajetória de Crescimento e Projeções de Mercado (MG)](./projecao_tendencias_2027_2031.png)
