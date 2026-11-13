@@ -56,7 +56,7 @@ Link: https://colab.research.google.com/drive/1fXQjnYzouhHfILDqUnpDv9yK_oXwUzEC?
 Abaixo está todo o código produzido e executado no Google Colab para gerar os resultados que serão apresentados ao final desse relatório.
 
 ------------------------------------------
-'''text
+```text
 # Experimentação com ML - Potencial de Mercado
 """
 
@@ -1107,4 +1107,6 @@ try:
         print("   [AVISO] Arquivo de projeção não encontrado. Execute o modelo preditivo primeiro.")
 except Exception as e:
     print(f"   [AVISO] Erro ao analisar a base de projeção: {e}")
-'''
+```
+## Resultados
+
