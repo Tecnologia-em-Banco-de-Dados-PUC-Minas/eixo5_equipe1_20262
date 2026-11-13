@@ -1108,8 +1108,8 @@ try:
 except Exception as e:
     print(f"   [AVISO] Erro ao analisar a base de projeção: {e}")
 ```
-## Resultados
-Após executar todos os scripts obtivemos os seguntes resultados:
+##📈 Resultados e Artefatos Gerados
+Após executar todos os scripts, obtivemos os seguintes resultados:
 ```text
 === INICIANDO DIAGNÓSTICO DE EFICIÊNCIA DE TREINAMENTO ===
 
@@ -1141,8 +1141,7 @@ Após executar todos os scripts obtivemos os seguntes resultados:
    [Diagnóstico da Projeção]:
    ✅ AJUSTE ADEQUADO: As curvas demonstram crescimento realista e sustentável para o mercado. O polinômio de Grau 2 evitou explosões exponenciais.
 ```
-O desemppenho foi muito bom em todos os tres modelos com resultados consistentes utilizando diferentes bases de dados. Além desse resumo da execução cada um dos codigo gerou um relatório .xlsx ou imagens .png de acordo com a demanda.
-Esse conteudo pode ser acessado pelos atalhos abaixo:
+O desempenho foi muito bom nos três modelos, com resultados consistentes utilizando diferentes bases de dados. Além desse resumo da execução, cada um dos códigos gerou relatórios em .xlsx ou imagens em .png de acordo com a demanda. Esse conteúdo pode ser acessado pelos atalhos abaixo:
 
 * 📊 **[Base Master Analítica (2016–2025)](./Base_Master_Analitica_MG_2016_2025.xlsx)** — Série histórica consolidada dos 853 municípios de Minas Gerais (demografia IBGE, frota SENATRAN e consumo ANP)[cite: 2, 3].
 * 🎯 **[Base Consolidada de Clusters](./Base_Consolidada_Clusters_MG.xlsx)** — Classificação hierárquica municipal resultante do K-Means ($K=6$), segmentando de *Polos Logísticos* a *Micromunicípios Rurais*[cite: 2, 3].
