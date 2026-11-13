@@ -1109,4 +1109,40 @@ except Exception as e:
     print(f"   [AVISO] Erro ao analisar a base de projeção: {e}")
 ```
 ## Resultados
+Após executar todos os scripts obtivemos os seguntes resultados:
+```text
+=== INICIANDO DIAGNÓSTICO DE EFICIÊNCIA DE TREINAMENTO ===
+
+1. Avaliando Regressão Linear (Modelo de Demanda):
+   -> R² no Treino: 0.9831
+   -> R² no Teste: 0.9858
+   -> MAPE no Teste: 69.66%
+
+   [Diagnóstico da Demanda]:
+   ✅ AJUSTE ADEQUADO: Regressão Linear estável e com boa capacidade preditiva.
+
+---------------------------------------------------------
+2. Avaliando Modelo Espacial (Efeito Spillover):
+   -> Índice de Moran (Leve): 0.1559
+   -> R² Espacial (Leve)    : 0.0960
+   -> Índice de Moran (Pesada): 0.1660
+   -> R² Espacial (Pesada)    : 0.0982
+
+   [Diagnóstico Espacial]:
+   ⚠️ SPILLOVER LEVE FRACO/MODERADO: Existe transbordo financeiro regional, mas a dependência espacial é sutil.
+   ⚠️ SPILLOVER PESADA FRACO/MODERADO: Transbordo financeiro baixo para linha pesada.
+
+---------------------------------------------------------
+3. Avaliando Projeção Polinomial de Crescimento (2027-2031):
+   -> Crescimento Acumulado (2031 vs Histórico): Frota 24.36% | Diesel 58.55%
+   -> Crescimento YoY (Ano-a-Ano no fim de 2031): Frota 2.96% | Diesel 7.13%
+   -> Crescimento apenas na Janela de Projeção (2027-2031): Frota 12.84% | Diesel 31.11%
+
+   [Diagnóstico da Projeção]:
+   ✅ AJUSTE ADEQUADO: As curvas demonstram crescimento realista e sustentável para o mercado. O polinômio de Grau 2 evitou explosões exponenciais.
+```
+O desemppenho foi muito bom em todos os tres modelos com resultados consistentes utilizando diferentes bases de dados. Além desse resumo da execução cada um dos codigo gerou um relatório .xlsx ou imagens .png de acordo com a demanda.
+Esse conteudo pode ser acessado pelos atalhos abaixo:
+
+
 
