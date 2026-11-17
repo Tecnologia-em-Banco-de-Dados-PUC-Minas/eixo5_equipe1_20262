@@ -7,13 +7,15 @@ O primeiro código é o de criação de clusters (agrupamentos) dos munícipios 
 Como resultado é geraso um arquivo no formato .xlsx contendo os dados de Código IBGE,	Município, Populacao,	Consymo total etanol + Gasolina,	Consumo diesel e	cluster_nome. 
 Os 6 clusters formados são os listados abaixo basenado se nos principais indicadoes do trabahlo (Populacao,	Consymo total etanol + Gasolina,	Consumo diesel e frota total).
 
-´
+
     "Polo Logístico e Metropolitano",
     "Centro Regional Principal",
     "Polo Econômico Intermediário",
     "Município em Desenvolvimento",
     "Pequenos Municípios de Apoio",
     "Micromunicípios / Rurais"
-    ´
+    
+    ```text
     Exemplo dos dados produzidos:
 <img width="1207" height="375" alt="image" src="https://github.com/user-attachments/assets/2fbfabb4-3ca5-4a9d-a646-f59de32333e4" />
+```
