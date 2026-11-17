@@ -46,6 +46,7 @@ Na etapa de regressão linear, são gerados dois artefatos complementares: um ar
 <img width="1421" height="586" alt="image" src="https://github.com/user-attachments/assets/f06c0bcf-8f93-4b16-bf38-a004c4b6c6d2" />
 
 ## Interpretação dos Resultados:
+
 Capacidade Preditiva ($R^2 = 0.**9932**$ no teste): O modelo explicou mais de 99% da variância dos dados de teste, sem gerar previsões negativas e mantendo estabilidade entre treino e teste (ausência de overfitting).
 Comportamento por Porte Municipal: No gráfico à esquerda (Real x Previsto), a grande concentração de pontos próximos à origem (0, 0) representa os pequenos municípios e micromunicípios, que compõem a maioria do estado. Já os pontos isolados na parte superior direita correspondem aos grandes polos urbanos, onde o modelo acompanhou fielmente a tendência linear, apresentando apenas uma leve subestimação nos extremos.
 Análise de Resíduos e **MAPE** ($48.50\%$): O gráfico à direita evidencia a heterocedasticidade natural da base (efeito *funil*). Nos municípios menores, pequenas variações absolutas na previsão geram erros percentuais elevados (puxando o **MAPE** para cima), embora tenham impacto financeiro irrelevante no volume total do estado.
