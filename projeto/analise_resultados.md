@@ -52,6 +52,7 @@ Análise de Resíduos e **MAPE** ($48.50\%$): O gráfico à direita evidencia a 
 
 ## 3. Spillover Espacial
 Como resultado da análise de spillover, é gerado um arquivo .xlsx contendo os dados base de venda por município, seguidos do percentual de venda complementar calculada, o aumento em reais (R$) dessa venda e os valores percentuais e monetários do impacto total no faturamento.Com essa análise, compreendemos o impacto que os municípios adjacentes têm sobre a venda de cada região. Esses valores são mais perceptíveis em grandes cidades como Belo Horizonte, Contagem e Uberlândia, devido ao alto faturamento e à concentração populacional e de consumo de combustíveis.Um detalhe fundamental para o bom desempenho dessa modelagem é a separação das vendas entre linha leve e linha pesada, já que representam mercados distintos e com sazonalidades variadas.
+
 <img width="1487" height="428" alt="image" src="https://github.com/user-attachments/assets/fe466146-1b9f-4425-8745-9d0d492ad9e7" />
 
 ## 4. Projeção de Crescimento dos KPIs
@@ -59,5 +60,6 @@ Como resultado da análise de spillover, é gerado um arquivo .xlsx contendo os 
 Como quarta e última análise, realizamos a projeção para os próximos 5 anos dos principais indicadores utilizados ao longo de todo o trabalho (consumo de combustível, população e frota de veículos). Isso permite validar qual deverá ser o foco para estudos futuros e qual desses indicadores exerce maior impacto sobre as vendas.Como resultado da execução, são gerados um gráfico contendo o histórico e a curva de crescimento dos indicadores, além de um arquivo .xlsx com os mesmos dados detalhados ano a ano.
 
 <img width="1296" height="932" alt="image" src="https://github.com/user-attachments/assets/6d1b8215-2664-4d9e-bfc4-eb3caa35910c" />
+
 
 <img width="1836" height="181" alt="image" src="https://github.com/user-attachments/assets/a184666d-ee63-4490-9019-5895261dedf5" />
