@@ -18,8 +18,10 @@ Os 6 clusters formados — classificados hierarquicamente com base nos principai
 
 **Exemplo dos dados produzidos:**
 
-<img width="1207" height="375" alt="Amostra da tabela de clusters gerada" src="https://github.com/user-attachments/assets/2fbfabb4-3ca5-4a9d-a646-f59de32333e4" />
-
+<p align="center">
+  <img width="1207" height="375" alt="Tabela Base_Consolidada_Clusters_MG.xlsx" src="https://github.com/user-attachments/assets/2fbfabb4-3ca5-4a9d-a646-f59de32333e4" /><br>
+  <em>Figura 1 — Amostra dos dados consolidados e classificados por cluster (<code>Base_Consolidada_Clusters_MG.xlsx</code>).</em>
+</p>
 ---
 
 ### 2. Regressão Linear (Modelo de Demanda)
