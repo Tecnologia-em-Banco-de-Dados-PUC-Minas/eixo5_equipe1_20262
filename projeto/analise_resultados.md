@@ -45,7 +45,11 @@ Na etapa de regressão linear, são gerados dois artefatos complementares: um ar
     *previsoes_negativas*: 0
 }
 ```
-<img width="1421" height="586" alt="image" src="https://github.com/user-attachments/assets/f06c0bcf-8f93-4b16-bf38-a004c4b6c6d2" />
+
+<p align="center">
+  <img width="1421" height="586" alt="Gráfico de Regressão Linear e Análise de Resíduos" src="https://github.com/user-attachments/assets/f06c0bcf-8f93-4b16-bf38-a004c4b6c6d2" /><br>
+  <em>Figura 2 — Comparação entre valores reais e previstos (esquerda) e distribuição de resíduos do modelo (direita).</em>
+</p>
 
 ## Interpretação dos Resultados:
 ### Capacidade Preditiva ($R^2 = 0.**9932**$ no teste): 
@@ -58,13 +62,21 @@ O gráfico à direita evidencia a heterocedasticidade natural da base (efeito *f
 ## 3. Spillover Espacial
 Como resultado da análise de spillover, é gerado um arquivo .xlsx contendo os dados base de venda por município, seguidos do percentual de venda complementar calculada, o aumento em reais (R$) dessa venda e os valores percentuais e monetários do impacto total no faturamento.Com essa análise, compreendemos o impacto que os municípios adjacentes têm sobre a venda de cada região. Esses valores são mais perceptíveis em grandes cidades como Belo Horizonte, Contagem e Uberlândia, devido ao alto faturamento e à concentração populacional e de consumo de combustíveis.Um detalhe fundamental para o bom desempenho dessa modelagem é a separação das vendas entre linha leve e linha pesada, já que representam mercados distintos e com sazonalidades variadas.
 
-<img width="1487" height="428" alt="image" src="https://github.com/user-attachments/assets/fe466146-1b9f-4425-8745-9d0d492ad9e7" />
+<p align="center">
+  <img width="1487" height="428" alt="Tabela Base_Academica_Spillover_Segmentada.xlsx" src="https://github.com/user-attachments/assets/fe466146-1b9f-4425-8745-9d0d492ad9e7" /><br>
+  <em>Figura 3 — Amostra dos cálculos de transbordo espacial e impacto na receita (<code>Base_Academica_Spillover_Segmentada.xlsx</code>).</em>
+</p>
 
 ## 4. Projeção de Crescimento dos KPIs
 
 Como quarta e última análise, realizamos a projeção para os próximos 5 anos dos principais indicadores utilizados ao longo de todo o trabalho (consumo de combustível, população e frota de veículos). Isso permite validar qual deverá ser o foco para estudos futuros e qual desses indicadores exerce maior impacto sobre as vendas.Como resultado da execução, são gerados um gráfico contendo o histórico e a curva de crescimento dos indicadores, além de um arquivo .xlsx com os mesmos dados detalhados ano a ano.
 
-<img width="1296" height="932" alt="image" src="https://github.com/user-attachments/assets/6d1b8215-2664-4d9e-bfc4-eb3caa35910c" />
+<p align="center">
+  <img width="1296" height="932" alt="Gráfico de projeção de crescimento dos indicadores" src="https://github.com/user-attachments/assets/6d1b8215-2664-4d9e-bfc4-eb3caa35910c" /><br>
+  <em>Figura 4 — Curvas históricas (2016–2025) e projeção polinomial (2027–2031) de população, frota e consumo (<code>projecao_tendencias_2027_2031.png</code>).</em>
+</p>
 
-
-<img width="1836" height="181" alt="image" src="https://github.com/user-attachments/assets/a184666d-ee63-4490-9019-5895261dedf5" />
+<p align="center">
+  <img width="1836" height="181" alt="Tabela detalhada da projeção de crescimento" src="https://github.com/user-attachments/assets/a184666d-ee63-4490-9019-5895261dedf5" /><br>
+  <em>Figura 5 — Consolidação anual das projeções e variações percentuais acumuladas e YoY (<code>Projecao_Crescimento_MG_2027_2031.xlsx</code>).</em>
+</p>
