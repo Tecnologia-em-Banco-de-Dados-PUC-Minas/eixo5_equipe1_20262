@@ -46,9 +46,12 @@ Na etapa de regressão linear, são gerados dois artefatos complementares: um ar
 <img width="1421" height="586" alt="image" src="https://github.com/user-attachments/assets/f06c0bcf-8f93-4b16-bf38-a004c4b6c6d2" />
 
 ## Interpretação dos Resultados:
-Capacidade Preditiva ($R^2 = 0.**9932**$ no teste): O modelo explicou mais de 99% da variância dos dados de teste, sem gerar previsões negativas e mantendo estabilidade entre treino e teste (ausência de overfitting).
-Comportamento por Porte Municipal: No gráfico à esquerda (Real x Previsto), a grande concentração de pontos próximos à origem (0, 0) representa os pequenos municípios e micromunicípios, que compõem a maioria do estado. Já os pontos isolados na parte superior direita correspondem aos grandes polos urbanos, onde o modelo acompanhou fielmente a tendência linear, apresentando apenas uma leve subestimação nos extremos.
-Análise de Resíduos e **MAPE** ($48.50\%$): O gráfico à direita evidencia a heterocedasticidade natural da base (efeito *funil*). Nos municípios menores, pequenas variações absolutas na previsão geram erros percentuais elevados (puxando o **MAPE** para cima), embora tenham impacto financeiro irrelevante no volume total do estado.
+### Capacidade Preditiva ($R^2 = 0.**9932**$ no teste): 
+O modelo explicou mais de 99% da variância dos dados de teste, sem gerar previsões negativas e mantendo estabilidade entre treino e teste (ausência de overfitting).
+### Comportamento por Porte Municipal: 
+No gráfico à esquerda (Real x Previsto), a grande concentração de pontos próximos à origem (0, 0) representa os pequenos municípios e micromunicípios, que compõem a maioria do estado. Já os pontos isolados na parte superior direita correspondem aos grandes polos urbanos, onde o modelo acompanhou fielmente a tendência linear, apresentando apenas uma leve subestimação nos extremos.
+### Análise de Resíduos e **MAPE** ($48.50\%$): 
+O gráfico à direita evidencia a heterocedasticidade natural da base (efeito *funil*). Nos municípios menores, pequenas variações absolutas na previsão geram erros percentuais elevados (puxando o **MAPE** para cima), embora tenham impacto financeiro irrelevante no volume total do estado.
 
 ## 3. Spillover Espacial
 Como resultado da análise de spillover, é gerado um arquivo .xlsx contendo os dados base de venda por município, seguidos do percentual de venda complementar calculada, o aumento em reais (R$) dessa venda e os valores percentuais e monetários do impacto total no faturamento.Com essa análise, compreendemos o impacto que os municípios adjacentes têm sobre a venda de cada região. Esses valores são mais perceptíveis em grandes cidades como Belo Horizonte, Contagem e Uberlândia, devido ao alto faturamento e à concentração populacional e de consumo de combustíveis.Um detalhe fundamental para o bom desempenho dessa modelagem é a separação das vendas entre linha leve e linha pesada, já que representam mercados distintos e com sazonalidades variadas.
